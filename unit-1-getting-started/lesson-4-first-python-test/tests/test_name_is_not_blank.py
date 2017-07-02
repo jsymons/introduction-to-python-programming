@@ -1,0 +1,1 @@
+assert your_name != ''
