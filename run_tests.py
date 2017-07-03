@@ -1,11 +1,32 @@
-import unittest
 import hashlib
 import os
 import sys
 
 import logging
 import logging.config
-d = {
+import pytest
+import pytoml as toml
+
+try:
+    from pathlib import Path
+except ImportError:
+    from pathlib2 import Path
+
+try:
+    from tempfile import TemporaryDirectory
+except ImportError:
+    import tempfile
+    import shutil
+
+    class TemporaryDirectory(object):
+        def __enter__(self):
+            self.dir_name = tempfile.mkdtemp()
+            return self.dir_name
+
+        def __exit__(self, exc_type, exc_value, traceback):
+            shutil.rmtree(self.dir_name)
+
+logging.config.dictConfig({
     'version': 1,
     'formatters': {
         'detailed': {
@@ -30,35 +51,13 @@ d = {
             'level': 'INFO'
         }
     }
-}
-logging.config.dictConfig(d)
+})
 logger = logging.getLogger(__name__)
-try:
-    from tempfile import TemporaryDirectory
-except ImportError:
-    import tempfile
-    import shutil
-
-    class TemporaryDirectory(object):
-        def __enter__(self):
-            self.dir_name = tempfile.mkdtemp()
-            return self.dir_name
-
-        def __exit__(self, exc_type, exc_value, traceback):
-            shutil.rmtree(self.dir_name)
-
-from nose.core import TestProgram
-try:
-    from pathlib import Path
-except ImportError:
-    from pathlib2 import Path
-
-
-import pytoml as toml
 
 CODE_TYPE = 'code'
 SOLUTIONS_RELATIVE_PATH = 'solutions'
 TESTS_FILE_NAME = 'tests.py'
+TESTS_DIRECTORY_NAME = 'tests'
 
 
 class InvalidLessonException(Exception):
@@ -88,9 +87,30 @@ class Solution(object):
 
 
 def read_lesson_tests(lesson_path):
-    tests_path = lesson_path / TESTS_FILE_NAME
-    with tests_path.open('r') as tests_f:
-        return tests_f.read()
+
+    def _read_file(path):
+        with path.open('r', encoding='utf-8') as fp:
+            return fp.read()
+
+    def _read_tests_directory(path):
+        if not path.exists():
+            return None
+
+        return '\n'.join([_read_file(p) for p in path.glob('test_*.py')])
+
+    def _read_tests_py(path):
+        if not path.exists():
+            return None
+        return _read_file(path)
+
+    tests_dir_path = lesson_path / TESTS_DIRECTORY_NAME
+    test_py_file_path = lesson_path / TESTS_FILE_NAME
+
+    return "{}\n\n{}".format(
+        _read_tests_directory(tests_dir_path) or '',
+        _read_tests_py(test_py_file_path) or ''
+    )
+
 
 def _get_unit_number(unit_name):
     start = unit_name.index('-') + 1
@@ -148,6 +168,7 @@ def write_solution_test_file(_dir, solution):
     test_file_name = "test_{hash}_{solution}".format(
         solution=solution.path.name, hash=lesson_hash)
     test_file_path = os.path.join(abs_path, test_file_name)
+
     with open(test_file_path, 'w') as test_f, solution.path.open('r') as solution_f:
         test_f.write(solution_f.read())
         test_f.write('\n\n')
@@ -155,20 +176,15 @@ def write_solution_test_file(_dir, solution):
 
 
 def test_lessons_solutions(grep=None, units=None, exit=True):
-
     with TemporaryDirectory() as temp_dir:
         abs_path = os.path.abspath(temp_dir)
         for lesson in iter_code_lessons(grep=grep, units=units):
             for solution in iter_lesson_solutions(lesson):
                 write_solution_test_file(temp_dir, solution)
 
-        suite = unittest.TestLoader().discover(abs_path)
-        program = TestProgram(suite=suite, exit=False, argv=sys.argv[0:1])
-
-        if exit:
-            sys.exit(int(not program.success))
-
-        return program
+        exit = pytest.main([abs_path, '-v', '--tb=short'])
+        if exit != 0:
+            sys.exit(exit)
 
 
 if __name__ == '__main__':
