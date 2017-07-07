@@ -11,8 +11,11 @@ favorite_number = 12
 You will encounter several different data types. The 3 most common types are integers, floats, and strings.
 
 Integers are whole numbers like `12`.
+
 Floats are decimal point numbers like `12.0`.
+
 Strings are text like `howdy` or `My favorite number is 12`. Note you can use numbers inside strings.
+
 
 You will use these a lot, so take the time to do the reading below to make sure you are comfortable with them. :)
 
