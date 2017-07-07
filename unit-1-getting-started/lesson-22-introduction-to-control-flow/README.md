@@ -13,7 +13,7 @@ If you give a cat some catnip, the cat will probably go crazy.
 Otherwise, the cat will probably just be lazy and clean itself.
 ```
 
-Then, you can translate that into python, use `if`, `elif`, and `else` statements in python used to denote the different cases of how your program would act. You give each of these statements a condition that has to be met for the code indented below it to be executed. The `if` statement is for the first possible condition,  `elif` (can have 0 or more `elif` statements) is for all the other potential conditions, and `else` is if none of those conditions are met.
+Then, you can translate that into python, use `if`, `elif`, and `else` statements in python used to denote the different cases of how your program would act. You give each of these statements a condition that has to be met for the code indented below it to be executed. The `if` statement is for the first possible condition,  `elif` (can have zero or more `elif` statements) is for all the other potential conditions, and `else` is if none of those conditions are met.
 
 And now you can go to real python code!
 
@@ -28,6 +28,5 @@ That's the first part of control flow!
 
 ## Reading material
 
-* [Chapter 2](https://automatetheboringstuff.com/chapter2/) from Automate the Boring Stuff with Python
-* (Optional) [Control Flow](https://en.wikibooks.org/wiki/Python_Programming/Control_Flow) from Wikibooks
-* (Optional) [Control Flow](https://python.swaroopch.com/control_flow.html) from A Byte of Python
+* [Chapter 2](https://automatetheboringstuff.com/chapter2/) from Automate the Boring Stuff with Python (Read up until while loops)
+* (Optional) [Control Flow](https://python.swaroopch.com/control_flow.html) from A Byte of Python (Only the stuff on if statements)
