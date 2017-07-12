@@ -1,9 +1,9 @@
 print("Hello World")
 
 # The `len` function
-print("Lenght of the string RMOTR:")
-lenght_of_rmotr = len('RMOTR')
-print(lenght_of_rmotr)
+print("Length of the string RMOTR:")
+length_of_rmotr = len('RMOTR')
+print(length_of_rmotr)
 
 # The `sum` function
 print("Sum of the first 5 numbers")
