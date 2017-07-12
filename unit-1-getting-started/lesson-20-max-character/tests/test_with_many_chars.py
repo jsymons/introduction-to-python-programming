@@ -1,2 +1,2 @@
-def test_with_empty_string():
-    assert max_char('') == ''
+def test_with_many_chars():
+    assert max_char('janbfthahdag') == 't'
