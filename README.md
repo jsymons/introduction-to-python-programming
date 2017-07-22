@@ -1,4 +1,4 @@
-![Travis status](https://api.travis-ci.org/rmotr-curriculum/itp-class.svg?branch=master)
+![Travis status](https://api.travis-ci.org/rmotr-curriculum/introduction-to-python-programming.svg?branch=master)
 
 # Introduction to Programming with Python
 
