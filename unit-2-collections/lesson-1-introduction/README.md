@@ -8,4 +8,4 @@ Working with collections requires a good understanding of looping constructs. Th
 
 ## Recommended readings
 
-Start with [Chapter 4 about Lists](https://automatetheboringstuff.com/chapter4/) from [Automate the Boring Stuff](https://automatetheboringstuff.com/). It's a good introduction to lists and basic looping. For more details about loops, you can use the chapter about [Control Flow](https://python.swaroopch.com/control_flow.html) from [A Byte of Python]((https://python.swaroopch.com/). Specially the parts about `while` and `for` loops.
+Start with [Chapter 4 about Lists](https://automatetheboringstuff.com/chapter4/) from [Automate the Boring Stuff](https://automatetheboringstuff.com/). It's a good introduction to lists and basic looping. For more details about loops, you can use the chapter about [Control Flow](https://python.swaroopch.com/control_flow.html) from [A Byte of Python](https://python.swaroopch.com/). Specially the parts about `while` and `for` loops.
