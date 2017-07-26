@@ -6,7 +6,13 @@ Write a function `analyze_age_in_dicts` that receives a list of dictionaries, pu
 * `'dictionary_count'`: The number of elements processed
 
 ```python
-analyze_age_in_dicts([{"name" : "Bob", "age": 22}, {"name" : "Jane", "age" : 26}])
+analyze_age_in_dicts([{
+  "name": "Bob",
+  "age": 22
+  }, {
+  "name": "Jane",
+  "age": 26
+}])
 
 # {"avg_age" : 24.0, "dictionary_count" : 2}
 ```
