@@ -1,6 +1,6 @@
 # Make a Car with Attributes
 
-Create a class `Car` that is initialized by providing three arguments: `color`, 'make', and `model`.
+Create a class `Car` that is initialized by providing three arguments: `color`, `make`, and `model`.
 
 Then, create two instances:
 `car1` will be have it's color be blue, model be Tesla, and make be Model S.
