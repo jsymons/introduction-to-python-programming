@@ -4,6 +4,6 @@ def test_car1_attributes():
 
     assert hasattr(car1, 'color') is True, "car1 doesn't have a color attribute"
 
-    assert hasattr(car1, 'maker') is True, "car1 doesn't have a maker attribute"
+    assert hasattr(car1, 'make') is True, "car1 doesn't have a make attribute"
 
     assert hasattr(car1, 'model') is True, "car1 doesn't have a model attribute"
