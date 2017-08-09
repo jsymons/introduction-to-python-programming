@@ -1,4 +1,4 @@
-# Make a Car
+# Make a Car with Attributes
 
 Create a class `Car` that is initialized by providing three arguments: `color`, 'make', and `model`.
 
