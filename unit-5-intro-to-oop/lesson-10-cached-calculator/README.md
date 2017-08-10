@@ -22,7 +22,7 @@ Write a class `Calculator` that has the same methods as the previous one (`add` 
     (2, 3, 5)
   ],
   'subtract': [
-    (8, 2, 5)
+    (8, 2, 6)
   ]
 }
 >>> c.add(9, 3)
@@ -34,7 +34,7 @@ Write a class `Calculator` that has the same methods as the previous one (`add` 
     (9, 3, 12)
   ],
   'subtract': [
-    (8, 2, 5)
+    (8, 2, 6)
   ]
 }
 # Same method invoked again:
