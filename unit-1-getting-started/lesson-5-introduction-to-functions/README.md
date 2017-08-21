@@ -8,7 +8,7 @@ The usually receive data as input and `return` a result as output.
 
 Functions are built like this:
 
-```
+```python
 # Function Defintion
 def my_function(parameter1, parameter2):
   # do something
@@ -21,7 +21,7 @@ In parenthesis, you see two parameters. You can have as many or as few as you wa
 
 The function call is going to look similar to the function definition.
 
-```
+```python
 # Function Call
 # This is a function call, where we tell python to run our function. 
 # It's storing the function output that is returned in a new variable called function_result
