@@ -1,2 +1,2 @@
-def test_with_multiple_strings():
-    assert concatenate_strings('abc', 'def') == 'abcdef'
+def test_with_empty_string():
+    assert concatenate_strings('abc', '') == 'abc'
