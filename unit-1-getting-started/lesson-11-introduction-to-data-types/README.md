@@ -4,7 +4,7 @@ While programming, you will be storing and manipulating lots of data. But where 
 
 Data is stored in something called a variable. When creating a variable, you give it a name and then tell it what will be stored in it. Like this:
 
-```
+```python
 favorite_number = 12
 ```
 
