@@ -48,6 +48,7 @@ Read up on functions in more detail in the following readings.
 * [Chapter 3](https://automatetheboringstuff.com/chapter3/) from Automate the Boring Stuff
 * [Functions](https://python.swaroopch.com/functions.html) from A Byte of Python
 
-Optional Readings:
+## Optional Readings:
+
 * [Intro](http://thelivingpearl.com/2013/12/23/introduction-to-functions-in-python/) from the living pearl
 * Syntax, return, and param sections of [Python Course](http://www.python-course.eu/python3_functions.php)
