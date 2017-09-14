@@ -3,8 +3,8 @@
 Create a class `Car` that is initialized by providing three arguments: `color`, `make`, and `model`.
 
 Then, create two instances:
-`car1` will be have it's color be blue, model be Tesla, and make be Model S.
-`car2` will be have it's color be red, model be Chevy, and make be Camaro.
+`car1` will be have it's `color` be _blue_, `make` be _Tesla_ and `model` be _Model S_.
+`car2` will be have it's `color` be _red_, `make` be _Chevy_, and `model` be _Camaro_.
 
 Example:
 
