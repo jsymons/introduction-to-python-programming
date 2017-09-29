@@ -1,0 +1,1 @@
+# Get Positions of Char
