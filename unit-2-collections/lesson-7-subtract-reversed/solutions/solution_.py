@@ -4,8 +4,10 @@ def subtract_reversed(a_list):
 
     result = a_list[-1]
     index = 0
-    while index < len(a_list) - 1:
-        elem = a_list[index]
+    new_list = a_list[:-1]
+    new_list.reverse()
+    while index < len(new_list):
+        elem = new_list[index]
         result -= elem
 
         index += 1
